@@ -42,7 +42,6 @@
 
        }
        button{
-           margin-top: 50px;
            background-color:#C6CC71;
            color: #fff;
            font-size: 2em;
@@ -51,6 +50,9 @@
            padding-right: 20px;
            border-radius: 70px;
            cursor: pointer;
+           justify-content: center;
+           margin: auto;
+           margin-top: 50px;
        }
         button:hover{
            transform: scale(1.1);
@@ -141,6 +143,7 @@
 
     }
 
+
   </style>
 <body>     <!--default header!-->
          <div class='header'>
@@ -151,11 +154,11 @@
      </div>
 
      <div class='header'>
-         <button>Shorts</button>
-         <button >All</button>
-         <button>Video</button>
-         <button>Audio</button>
-         <button style='background-color: #000;'>Contacts</button>
+         <button id='shorts'>Shorts</button>
+         <button id='all' >All</button>
+         <button id='videos'>Video</button>
+         <button id='audios'>Audio</button>
+
 
      </div>
 
@@ -202,13 +205,20 @@
                   <p>Contact Us</p>
                   <input  type='textbox' name="name" required  placeholder="Enter Your Name">
                   <input name="email" type="email" required placeholder="Enter a valid email">
-                  <textarea name="discription" rows="20" cols="20"
+                  <textarea name="discription" rows="10" cols="10"
                   required placeholder="Explain Your ideas or any querry"></textarea>
                   <button class="submit">SUBMIT</button>
               </div>
 
      </form>
 
+      <script>
+         const all = document.getElementById('all');
+         
+       all.addEventListener('click', function(event){
+           window.location.href ='index.html';
+       });
+      </script>
 
 </body>
 
