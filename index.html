@@ -7,7 +7,8 @@
 </head>
     <style>
      body{
-         background-color: #FFF;
+         font-family: 'Open Sans', sans-serif;
+         background-color: #E0E0E0;
          margin: 30px;
          display: grid;
          font-size: 2em;
@@ -15,48 +16,115 @@
      }
        .header{
            display: flex;
+           flex-warp: warp;
            justify-content: space-between;
 
        }
        .searchbox{
-           background-color: darkgrey;
-           color: #fff;
-           font-size: 1.5em;
-           border: none;
+           background-color: #eee;
+           color: #333;
+           font-size: 1.7em;
+           border: 1px solid #000;
            padding-left: 40px;
            border-radius: 70px;
            width: 75%;
+           margin-left: 30px;
 
        }
+        .searchbox:hover{
+           transform: scale(1.05);
+        }
        img{
            cursor: pointer;
+           border-radius: 70px 70px;
+           margin-right: 30px;
        }
        button{
-           margin-top: 50px;
-           background-color: darkgrey;
+           background-color:#C6CC71;
            color: #fff;
-           font-size: 1.5em;
+           font-size: 1.7em;
            border: none;
            padding-left: 20px;
            padding-right: 20px;
            border-radius: 70px;
+           cursor: pointer;
+           justify-content: center;
+           margin: auto;
+           margin-top: 50px;
        }
+        button:hover{
+           transform: scale(1.1);
+        }
        .download-button{
+           font-size: 2em;
            padding: 10px;
-           background-color: #C6CC71;
+           background-color: #333;
            margin-top: 2px;
            margin-left: 100px;
+           animation: blink 2s infinite;
+           margin-bottom: 50px;
        }
+    @keyframes blink{
+       0% {opacity: 1;}
+       50% {opacity: 0;}
+       100% {opacity: 1;}
+      }
+      .maindownload{
+           color: #fff;
+           padding: 20px;
+}
        .videos{
-           margin: 50px;
+           background-color: #fff;
+           padding: 20PX;
+           text-align: center;
+           padding-top: 50px;
+           border-radius: 10PX;
 
        }
        .layout{
+           display: grid;
+           grid-template-rows: 1fr;
+           gap: 30px;
+           justify-content: center;
+           margin-top: 50px;
+           margin-right: 50px;
+           margin-left: 50px;
+       }
+       video{
+           border-radius: 25px;
 
        }
+
        code{
+           color: #666;
            margin-left: 100px;
            font-size: 2em;
+       }
+       .footer{
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr;
+           gap: 50px;
+           justify-content: center;
+           margin: auto;
+           position: fixed;
+           bottom: 0;
+           background-color: #eee;
+           border-radius: 20px;
+           padding: 30px;
+           transform: translateY(100%);
+           transition: transform 0.3s ease-in-out;
+       }
+       .footer.show{
+             transform: translateY(0);
+       }
+       .fbutton{
+          background-color: #333;
+          padding: 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.7em;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+
        }
 
     </style>
@@ -64,16 +132,15 @@
      <div class='header'>
          <input  class='searchbox' type="textbox" name='searchbox'
          placeholder='Search the music or artist' />
-         <img src="wesite icon.png" width="80" height="80"  alt="mup icon">
-         <img src="facebook icon.png" width="80" height="80"  alt="facebook icon">
+         <img src="logo.jpg" width="100" height="100"  alt="mup log">
+
      </div>
 
      <div class='header'>
-         <button>Shorts</button>
-         <button style='background-color: #000;'>All</button>
-         <button>Video</button>
-         <button>Audio</button>
-         <button>Contacts/Help</button>
+         <button id='shorts'>Shorts</button>
+         <button  id='all'style='background-color: #000;'>All</button>
+         <button  id='videos'>Video</button>
+         <button  id='audios'>Audio</button>
 
      </div>
 
@@ -88,31 +155,31 @@
        <br>
        <code>holly God-pascal ft exvin-mp4</code><br>
        <button class='download-button'>
-           <a href="praise-song.mp4" download> download video</a>
+           <a href="praise-song.mp4" class="maindownload" download> download video</a>
        </button>
      </div>
                <!---videos!--->
      <div class='videos'>
-         <video width='auto'height='550'  controls>
+         <video height='550'  controls>
            <source src="praise-song.mp4" type="video/mp4">
             your browser does not support the video tag
        </video>
         <br>
        <code>holly God-pascal ft exvin-mp4</code><br>
        <button class='download-button'>
-           <a href="praise-song.mp4" download> download video</a>
+           <a href="praise-song.mp4" class="maindownload" download> download video</a>
        </button>
      </div>
                  <!---videos!--->
      <div class='videos'>
-         <video width='auto' height='550'  controls style="text-align: center">
+         <video height='550'  controls style="text-align: center">
            <source src="praise-song.mp4" type="video/mp4">
             your browser does not support the video tag
        </video>
        <br>
        <code>holly God-pascal ft exvin-mp4</code><br>
        <button class='download-button'>
-           <a href="praise-song.mp4" download> download video</a>
+           <a href="praise-song.mp4" class="maindownload" download> download video</a>
        </button>
      </div>
 
@@ -120,43 +187,70 @@
 
            <!---videos!--->
      <div class='videos'>
-         <video width='auto' height='550'  controls style="text-align: center">
+         <video  height='550'  controls style="text-align: center">
            <source src="praise-song.mp4" type="video/mp4">
             your browser does not support the video tag
        </video>
        <br>
        <code>holly God-pascal ft exvin-mp4</code><br>
        <button class='download-button'>
-           <a href="praise-song.mp4" download> download video</a>
+           <a href="praise-song.mp4" class="maindownload" download> download video</a>
        </button>
      </div>
               <!---videos!--->
      <div class='videos'>
-         <video width='auto' height='550'  controls style="text-align: center">
+         <video height='550'  controls style="text-align: center">
            <source src="praise-song.mp4" type="video/mp4">
             your browser does not support the video tag
        </video>
        <br>
        <code>holly God-pascal ft exvin-mp4</code><br>
        <button class='download-button'>
-           <a href="praise-song.mp4" download> download video</a>
+           <a href="praise-song.mp4" class="maindownload" download> download video</a>
        </button>
      </div>
                  <!---videos!--->
      <div class='videos'>
-         <video width='auto' height='550'  controls style="text-align: center">
+         <video height='550'  controls style="text-align: center">
            <source src="praise-song.mp4" type="video/mp4">
             your browser does not support the video tag
        </video>
        <br>
        <code>holly God-pascal ft exvin-mp4</code><br>
        <button class='download-button'>
-           <a href="praise-song.mp4" download> download video</a>
+           <a href="praise-song.mp4" class="maindownload" download> download video</a>
        </button>
      </div>
         </div>
 
+<div id='footer' class='footer'>
+           <button class='fbutton' style="background-color: #798DCC">HOME</button>
+           <button class='fbutton'>FACEBOOK</button>
+           <button  id='contact'class='fbutton'>CONTACTS</button>
 
+            </div>
+
+
+
+    <script>
+
+
+       window.addEventListener('scroll', () =>{
+         const footer = document.getElementById('footer');
+         const scrollposition = window.scrollY;
+           if (scrollposition > 100) {
+               footer.classList.add('show');
+           } else {
+               footer.classList.remove('show');
+           }
+       });
+
+
+       const contact = document.getElementById('contact');
+       contact.addEventListener('click', function(event){
+           window.location.href ='contact.html';
+       });
+    </script>
 </body>
 
 </html>
